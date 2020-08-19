@@ -2,6 +2,7 @@
 
 
 @section('content')
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong>Il y a quelques problèmes avec votre saisie.<br><br>
@@ -12,6 +13,24 @@
         </ul>
     </div>
 @endif
+
+ <div class="container-fluid">
+    <h2> {{ $categoryName ?? null }} Products </h2>
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <div class="list-group">
+            <a href="/products" class="list-group-item">Tous les produits</a> 
+            @foreach ($categories as $category)
+        <a href="?category_id={{$category->id}}" class="list-group-item">{{$category->name}}</a> 
+            @endforeach
+         
+
+        </div>
+
+      </div>
+      <!-- /.col-lg-3 -->
 <div class="product-details ptb-100 pb-90">
     <div class="container">
         <div class="row">
@@ -35,7 +54,7 @@
                     <div class="details-price">
                         <span>${{$product->price}}</span>
                     </div>
-                    <p>{!! $product->description !!}</p>
+                    <p>{{ $product->description }}</p>
 
                     <div class="quickview-plus-minus">
 

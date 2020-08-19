@@ -25,23 +25,7 @@
         @include('partials.nav')
 
         <main class="py-4">
-             <div class="container-fluid">
-    <h2> {{ $categoryName ?? null }} Products </h2>
-    <div class="row">
-
-      <div class="col-lg-3">
-
-        <div class="list-group">
-            <a href="/products" class="list-group-item">Tous les produits</a> 
-            @foreach ($categories as $category)
-        <a href="?category_id={{$category->id}}" class="list-group-item">{{$category->name}}</a> 
-            @endforeach
-         
-
-        </div>
-
-      </div>
-      <!-- /.col-lg-3 -->
+            
             @yield('content')
         </main>
     </div>

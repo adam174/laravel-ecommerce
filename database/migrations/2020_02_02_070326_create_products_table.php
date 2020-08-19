@@ -17,6 +17,12 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('description');
+            $table->string('type');
+            $table->string('etat');
+            $table->integer('duree');
+            $table->integer('adresse');
+            $table->integer('cp');
+            $table->integer('ville');
             $table->float('price');
             $table->string('cover_img')->nullable();
             $table->unsignedBigInteger('shop_id')->nullable();
