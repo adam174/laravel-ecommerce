@@ -18,7 +18,7 @@ class ProductController extends Controller
     {
         $categoryId = request('category_id');
         $categoryName = null;
-
+        $categories = Category::get();
         if($categoryId) {
             $category = Category::find($categoryId);
             $categoryName = ucfirst($category->name);
@@ -28,22 +28,23 @@ class ProductController extends Controller
             $products = Product::take(10)->get();
         }
 
-        return view('product.index', compact('products', 'categoryName'));
+        return view('product.index', compact('products', 'categoryName','categories'));
     }
 
     public function search(Request $request)
     {
-
+        $categories = Category::get();
         $query = $request->input('query');
 
         $products = Product::where('name','LIKE',"%$query%")->paginate(10);
 
-        return view('product.catalog',compact('products'));
+        return view('product.catalog',compact('products','categories'));
     }
 
     public function show(Product $product)
     {
-        return view('product.show', compact('product'));
+        $categories = Category::get();
+        return view('product.show', compact('product','categories'));
 
     }
 

@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-12 col-lg-7 col-12">
                 <div class="product-details-5 pr-70">
-                    <img src="/assets/img/product-details/l1-details-5.png" alt="">
+                    <img src="{{$product->cover_img ?? 'https://picsum.photos/300/300'}}" alt="">
                 </div>
             </div>
             <div class="col-md-12 col-lg-5 col-12">
@@ -30,9 +30,6 @@
                             <i class="pe-7s-star"></i>
                             <i class="pe-7s-star"></i>
                             <i class="pe-7s-star"></i>
-                        </div>
-                        <div class="quick-view-number">
-                            <span>2 Ratting (S)</span>
                         </div>
                     </div>
                     <div class="details-price">

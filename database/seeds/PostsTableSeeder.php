@@ -21,7 +21,7 @@ class PostsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'author_id' => 0,
-                'category_id' => NULL,
+                'category_id' => 1,
                 'title' => 'Lorem Ipsum Post',
                 'seo_title' => NULL,
                 'excerpt' => 'This is the excerpt for the Lorem Ipsum Post',

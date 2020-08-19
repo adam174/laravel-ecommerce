@@ -3,19 +3,27 @@
 
 @section('content')
 
-<div class="container">
+<!-- Page Content -->
+ 
 
-    <h2> {{ $categoryName ?? null }} Products </h2>
+      <div class="col-lg-9">
 
-    <div class="row">
-    @foreach ($products as $product)
+        <div class="row">
+ @foreach ($products as $product)
 
         @include('product._single_product')
     @endforeach
+        
+        </div>
+        <!-- /.row -->
+
+      </div>
+      <!-- /.col-lg-9 -->
 
     </div>
+    <!-- /.row -->
 
-
-</div>
+  </div>
+  <!-- /.container -->
 
 @endsection
